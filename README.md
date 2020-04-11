@@ -1,4 +1,4 @@
-<img title="" src="./src/static/images/logo.png" alt="Untitled/logo.png" data-align="center">
+<img title="" src=".github/images/logo.svg" alt="Untitled/logo.png" data-align="center">
 
 # Esducad UI
 
