@@ -1,5 +1,5 @@
 import React from 'react';
-import { border, shadow, compose } from 'styled-system';
+import { shadow } from 'styled-system';
 import { css } from 'styled-components';
 import { themeVariants } from '../../utils';
 import Box from '../box';
@@ -7,7 +7,7 @@ import Box from '../box';
 const { defaultPropTypes } = themeVariants;
 
 const styles = css`
-  ${compose(border, shadow)}
+  ${shadow}
 `;
 
 const Card = React.forwardRef((props, ref) => (

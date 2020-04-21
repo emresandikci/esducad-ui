@@ -40,7 +40,7 @@ export const SimpleCard = () => (
           </Box>
         </Box>
         <Box p={2}>
-          <Button>Learn more</Button>
+          <Button variant="default">Learn more</Button>
         </Box>
       </Card>
     </Box>
@@ -65,7 +65,7 @@ export const ShadowCard = () => (
           </Box>
         </Box>
         <Box p={2}>
-          <Button>Learn more</Button>
+          <Button variant="default">Learn more</Button>
         </Box>
       </Card>
     </Box>
