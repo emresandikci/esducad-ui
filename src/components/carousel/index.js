@@ -3,7 +3,7 @@ import Box from '../box';
 import Space from '../space';
 import PropTypes from 'prop-types';
 import { IconArrow } from '../../icons';
-import { hooks } from '../../utils';
+import { hooks, get } from '../../utils';
 
 const Item = props => <Box {...props} />;
 
@@ -15,7 +15,6 @@ const BaseComponent = React.forwardRef(
     const [step, setStep] = useState(0);
     const [prevStep, setPrevStep] = useState(0);
     const { useInterval } = hooks;
-
     const createCarouselItems = () => {
       if (children.length === 0) {
         return null;
@@ -38,7 +37,7 @@ const BaseComponent = React.forwardRef(
                 width="10px"
                 height="10px"
                 borderRadius="full"
-                bg={navigationColor ? navigationColor : 'black'}
+                bg={navigationColor}
                 css={`
                   cursor: pointer;
                   opacity: ${step === index ? 0.8 : 0.4};
@@ -75,14 +74,16 @@ const BaseComponent = React.forwardRef(
     };
 
     useEffect(() => {
-      onChange(step);
+      if (onChange) {
+        onChange(step);
+      }
     }, [step]);
 
-    if (delay) {
-      useInterval(() => {
+    useInterval(() => {
+      if (delay && delay > 0) {
         Next();
-      }, delay * 1000);
-    }
+      }
+    }, delay * 1000);
 
     return (
       <Box
@@ -100,7 +101,7 @@ const BaseComponent = React.forwardRef(
               <IconArrow
                 height={48}
                 width={48}
-                fill={arrowColor ? arrowColor : null}
+                fill={get.color(arrowColor)}
                 css={`
                   transform: rotate(-180deg);
                   cursor: pointer;
@@ -119,7 +120,11 @@ const BaseComponent = React.forwardRef(
               cursor: pointer;
             `}
           >
-            {rightIcon ? rightIcon : <IconArrow height={48} width={48} />}
+            {rightIcon ? (
+              rightIcon
+            ) : (
+              <IconArrow height={48} width={48} fill={get.color(arrowColor)} />
+            )}
           </Box>
         </Box>
       </Box>
@@ -138,8 +143,8 @@ BaseComponent.propTypes = {
 };
 BaseComponent.defaultProps = {
   delay: 0,
-  arrowColor: 'black',
-  navigationColor: 'black',
+  arrowColor: 'primary',
+  navigationColor: 'primary',
 };
 const Carousel = {
   ...BaseComponent,

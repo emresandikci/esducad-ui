@@ -17,11 +17,10 @@ const images = [
   'https://cdn.pixabay.com/photo/2015/02/24/15/41/dog-647528__340.jpg',
   'https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg',
 ];
-console.log(Carousel);
-export const Exampe = () => {
-  const onStepChanged = step => console.log(step);
+export const Exampe = props => {
+  const onStepChanged = step => step;
   const renderCarousel = () => (
-    <Carousel width={[1]} onChange={onStepChanged}>
+    <Carousel width={[1]} onChange={onStepChanged} arrowColor="primary">
       <Carousel.Item>
         <img src={images[0]} width="100%" />
       </Carousel.Item>
@@ -41,7 +40,7 @@ export const Exampe = () => {
 };
 
 export const WithDuration = () => {
-  const onStepChanged = step => console.log(step);
+  const onStepChanged = step => step;
   const renderCarousel = () => (
     <Carousel width={[1]} delay={3} onChange={onStepChanged}>
       <Carousel.Item>
@@ -62,7 +61,7 @@ export const WithDuration = () => {
   );
 };
 export const CustomCarouselWithText = () => {
-  const onStepChanged = step => console.log(step);
+  const onStepChanged = step => step;
   const renderCarousel = () => (
     <Carousel width={[1]} delay={3} onChange={onStepChanged}>
       <Carousel.Item>
@@ -96,7 +95,7 @@ export const CustomCarouselWithText = () => {
 };
 
 export const CustomCarousel = () => {
-  const onStepChanged = step => console.log(step);
+  const onStepChanged = step => step;
   const renderCarousel = () => (
     <Carousel width={[1]} onChange={onStepChanged}>
       <Carousel.Item position="relative">
