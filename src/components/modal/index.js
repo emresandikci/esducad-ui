@@ -7,23 +7,36 @@ import PropTypes from 'prop-types';
 import { defaultTheme, get } from '../../utils';
 import { IconClose } from '../../icons';
 
-const Content = ({ width, onClose, exitIconColor, ...props }) => {
+const Content = ({ width, onClose, exitIconColor, exitIconTop, exitIconRight, ...props }) => {
   const { colors } = defaultTheme;
   const iconColor = exitIconColor ? get.color(exitIconColor) : colors.danger;
   const handleOnClose = () => onClose(false);
   return (
-    <Card width={width ? width : ['300px', 1 / 2]} m="auto" boxShadow="card" {...props}>
-      <Box display="flex" justifyContent="flex-end" pr={3} pt={2}>
-        <Button variant="text" alignSelf="right" color={iconColor} onClick={handleOnClose}>
-          <IconClose fill={iconColor} />
-        </Button>
+    <Card
+      position="relative"
+      width={width ? width : ['300px', 1 / 2]}
+      m="auto"
+      boxShadow="card"
+      {...props}
+    >
+      <Box
+        position="absolute"
+        top={exitIconTop ? exitIconTop : '1rem'}
+        right={exitIconRight ? exitIconRight : '1rem'}
+        css={`
+          cursor: pointer;
+        `}
+        color={iconColor}
+        onClick={handleOnClose}
+      >
+        <IconClose fill={iconColor} />
       </Box>
       {props.children}
     </Card>
   );
 };
 
-const Header = props => <Box padding={3} pt={0} {...props} />;
+const Header = props => <Box padding={3} {...props} />;
 
 const Body = props => <Box padding={3} {...props} />;
 

@@ -52,3 +52,49 @@ export const Exampe = () => {
     </Box>
   );
 };
+
+export const FullModalExampe = () => {
+  const [isActive, setActive] = useState(false);
+
+  const renderModal = () => (
+    <Modal isActive={isActive} p="0" animation="fadeInDown">
+      <Modal.Content
+        position="fixed"
+        borderRadius="0"
+        height="100%"
+        width="100%"
+        overflow="auto"
+        onClose={() => setActive(false)}
+      >
+        <Modal.Header>
+          <Heading as="h3">Title</Heading>
+        </Modal.Header>
+        <Modal.Body>
+          <Text>
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+            piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard
+            McClintock, a Latin professor at Hampden-Sydney College in Virginia
+          </Text>
+        </Modal.Body>
+        <Modal.Footer display="flex" justifyContent="space-between">
+          <Button variant="success" width={1} mr={1}>
+            Save
+          </Button>
+          <Button variant="danger" width={1} onClick={() => setActive(false)}>
+            Cancel
+          </Button>
+        </Modal.Footer>
+      </Modal.Content>
+    </Modal>
+  );
+  return (
+    <Box height="600px">
+      <Box display="flex" justifyContent="center" py={2} mt={2}>
+        <Button variant="default" onClick={() => setActive(!isActive)}>
+          Open Full Modal
+        </Button>
+      </Box>
+      {renderModal()}
+    </Box>
+  );
+};
