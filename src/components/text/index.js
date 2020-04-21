@@ -15,12 +15,12 @@ const styles = css`
   ${compose(textType)}
 `;
 
-const Text = React.forwardRef((props, ref) => <Box css={styles} ref={ref} {...props} />);
+const Text = React.forwardRef((props, ref) => (
+  <Box m={0} p={0} css={styles} ref={ref} {...props} />
+));
 
 Text.defaultProps = {
   as: 'p',
-  m: 0,
-  p: 0,
   fontSize: 'normal',
   fontWeight: 'normal',
   color: 'darkerGray',
