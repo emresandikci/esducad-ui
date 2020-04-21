@@ -6,16 +6,12 @@ import { ThemeProvider } from 'styled-components';
 
 const newTheme = {
   ...defaultTheme,
-  ...{
-    colors: {
-      primary: defaultTheme.colors.warmPink,
-      secondary: defaultTheme.colors.blue,
-      ...defaultTheme.colors,
-    },
+  colors: {
+    ...defaultTheme.colors,
   },
 };
 
-console.log('theme', newTheme);
+window.theme = newTheme;
 
 addParameters({
   docs: {
