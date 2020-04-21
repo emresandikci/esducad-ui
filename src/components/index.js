@@ -1,29 +1,63 @@
-export { default as Accordion } from './accordion';
-export { default as Alert } from './alert';
-export { default as Avatar } from './avatar';
-export { default as Badge } from './badge';
-export { default as Box } from './box';
-export { default as Breadcrumbs } from './breadcrumbs';
-export { default as Button } from './button';
-export { default as Card } from './card';
-export { default as Carousel } from './carousel';
-export { default as CheckBox } from './checkbox';
-export { default as DatePicker } from './date-picker';
-export { default as Dialog } from './dialog';
-export { default as Divider } from './divider';
-export { default as Dropdown } from './dropdown';
-export { default as Heading } from './heading';
-export { default as Input } from './input';
-export { default as Modal } from './modal';
-export { default as Navbar } from './navbar';
-export { default as Pagination } from './pagination';
-export { default as Progressbar } from './progressbar';
-export { default as Radio } from './radio';
-export { default as Spinner } from './spinner';
-export { default as Tab } from './tab';
-export { default as Table } from './table';
-export { default as Tag } from './tag';
-export { default as TextArea } from './textarea';
-export { default as Toast } from './toast';
-export { default as Tooltip } from './tooltip';
-export { default as Space } from './space';
+import Accordion from './accordion';
+import Alert from './alert';
+import Avatar from './avatar';
+import Badge from './badge';
+import Box from './box';
+import Breadcrumbs from './breadcrumbs';
+import Button from './button';
+import Card from './card';
+import Carousel from './carousel';
+import CheckBox from './checkbox';
+import DatePicker from './date-picker';
+import Dialog from './dialog';
+import Divider from './divider';
+import Dropdown from './dropdown';
+import Heading from './heading';
+import Input from './input';
+import Modal from './modal';
+import Navbar from './navbar';
+import Pagination from './pagination';
+import Progressbar from './progressbar';
+import Radio from './radio';
+import Spinner from './spinner';
+import Tab from './tab';
+import Table from './table';
+import Tag from './tag';
+import TextArea from './textarea';
+import Toast from './toast';
+import Tooltip from './tooltip';
+import Space from './space';
+import Flex from './flex';
+
+export {
+  Accordion,
+  Alert,
+  Avatar,
+  Badge,
+  Box,
+  Breadcrumbs,
+  Button,
+  Card,
+  Carousel,
+  CheckBox,
+  DatePicker,
+  Dialog,
+  Divider,
+  Dropdown,
+  Heading,
+  Input,
+  Modal,
+  Navbar,
+  Pagination,
+  Progressbar,
+  Radio,
+  Spinner,
+  Tab,
+  Table,
+  Tag,
+  TextArea,
+  Toast,
+  Tooltip,
+  Space,
+  Flex,
+};
