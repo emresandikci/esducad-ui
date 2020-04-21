@@ -38,7 +38,7 @@ const getHsl = (props, lightness) => {
       hex =
         variant === 'text' || variant === 'outline'
           ? color
-          : themeVariants.buttonTypes[variant].bg;
+          : get.currentTheme().buttons[variant].bg;
     }
 
     const currentColor = get.color(hex);
