@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   *, *:before, *:after {
     box-sizing: inherit;
     margin: 0;
+    font-size:16px;
   }
 `;
 
