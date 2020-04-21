@@ -2,7 +2,6 @@ import { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { variant, compose } from 'styled-system';
 import React from 'react';
-// import { defaultTheme } from '../../utils';
 import Box from '../box';
 
 const headingTypes = variant({
