@@ -32,6 +32,9 @@ const Footer = props => <Box padding={3} {...props} />;
 const BaseComponent = React.forwardRef((props, ref) => {
   const defaultPaddingTop = 7;
   const { pt, isActive } = props;
+  if (window) {
+    document.body.style.overflow = isActive ? 'hidden' : null;
+  }
   return (
     <Overlay
       ref={ref}
