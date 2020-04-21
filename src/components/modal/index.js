@@ -1,15 +1,12 @@
 import React from 'react';
 import Box from '../box';
 import Card from '../card';
-import Button from '../button';
 import Overlay from '../overlay';
-import PropTypes from 'prop-types';
-import { defaultTheme, get } from '../../utils';
+import { get } from '../../utils';
 import { IconClose } from '../../icons';
 
 const Content = ({ width, onClose, exitIconColor, exitIconTop, exitIconRight, ...props }) => {
-  const { colors } = defaultTheme;
-  const iconColor = exitIconColor ? get.color(exitIconColor) : colors.danger;
+  const iconColor = exitIconColor ? get.color(exitIconColor) : get.color('danger');
   const handleOnClose = () => onClose(false);
   return (
     <Card
