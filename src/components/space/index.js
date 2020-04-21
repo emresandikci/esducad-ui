@@ -1,19 +1,12 @@
 import React from 'react';
 import Box from '../box';
-const Space = props => {
-  const { sr, sl, st, sb, children } = props;
-
+const Space = ({ sr, sl, st, sb, space, children, ...props }) => {
   const setSpace = () => {
     if (children && children.length === 0) {
       return null;
     }
     return React.Children.map(children, (child, index) => (
-      <Box
-        mr={index === children.length - 1 ? 0 : sr}
-        ml={index === children.length - 1 ? 0 : sl}
-        mt={index === children.length - 1 ? 0 : st}
-        mb={index === children.length - 1 ? 0 : sb}
-      >
+      <Box pr={sr} pl={sl} pt={st} pb={sb} p={space}>
         {React.cloneElement(child, {})}
       </Box>
     ));

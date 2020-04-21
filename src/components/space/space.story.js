@@ -9,14 +9,14 @@ import Space from './index';
 export default {
   title: 'Space',
   parameters: {
-    componentSubtitle: 'Space is helping to set margin to all child elements',
+    componentSubtitle: 'Space is helping to set space to all child elements',
   },
   component: Space,
 };
 export const SpaceToCards = () => (
   <Box>
     <Heading as="h2">Example Usage</Heading>
-    <Box bg="lightGray" display="flex" flexWrap="wrap" justifyContent="center" py={2} mt={2}>
+    <Box bg="lightGray" display="flex" justifyContent="center" py={2} mt={2}>
       <Space sr={[0, 3]} sb={[3, 3, 0]}>
         <Card width="286px" position="relative">
           <Box borderRadius="default">
