@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '../box';
 import Text from '../text';
 import Heading from '../heading';
-
+import Flex from '../flex';
 export default {
   title: 'Box',
   parameters: {
@@ -19,14 +19,14 @@ export const General = () => (
     <Box pt={5}>
       <Heading as="h3">Example</Heading>
     </Box>
-    <Box display="flex" flexWrap="wrap" height="600px" bg={'lightGray'}>
+    <Flex>
       <Box
         display="flex"
         alignItems="center"
         justifyContent="center"
         width={1 / 2}
         height={'200px'}
-        bg={'pink'}
+        bg={'primary'}
       >
         <Text fontSize="large" fontWeight="bolder" color="white">
           Box
@@ -38,7 +38,55 @@ export const General = () => (
         justifyContent="center"
         width={1 / 2}
         height={'200px'}
-        bg={'darkPink'}
+        bg={'secondary'}
+      >
+        <Text fontSize="large" fontWeight="bolder" color="white">
+          Box
+        </Text>
+      </Box>
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        width={1 / 4}
+        height={'200px'}
+        bg={'danger'}
+      >
+        <Text fontSize="large" fontWeight="bolder" color="white">
+          Box
+        </Text>
+      </Box>
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        width={1 / 4}
+        height={'200px'}
+        bg={'success'}
+      >
+        <Text fontSize="large" fontWeight="bolder" color="white">
+          Box
+        </Text>
+      </Box>
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        width={1 / 4}
+        height={'200px'}
+        bg={'info'}
+      >
+        <Text fontSize="large" fontWeight="bolder" color="white">
+          Box
+        </Text>
+      </Box>
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        width={1 / 4}
+        height={'200px'}
+        bg={'warning'}
       >
         <Text fontSize="large" fontWeight="bolder" color="white">
           Box
@@ -56,42 +104,6 @@ export const General = () => (
           Box
         </Text>
       </Box>
-      <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        width={1 / 3}
-        height={'200px'}
-        bg={'primary'}
-      >
-        <Text fontSize="large" fontWeight="bolder" color="white">
-          Box
-        </Text>
-      </Box>
-      <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        width={1 / 3}
-        height={'200px'}
-        bg={'secondary'}
-      >
-        <Text fontSize="large" fontWeight="bolder" color="white">
-          Box
-        </Text>
-      </Box>
-      <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        width={1 / 3}
-        height={'200px'}
-        bg={'default'}
-      >
-        <Text fontSize="large" fontWeight="bolder" color="white">
-          Box
-        </Text>
-      </Box>
-    </Box>
+    </Flex>
   </Box>
 );

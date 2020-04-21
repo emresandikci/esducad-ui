@@ -7,6 +7,7 @@ import {
   flexbox,
   position,
   borderRadius,
+  border,
   compose,
 } from 'styled-system';
 import PropTypes from 'prop-types';
@@ -14,7 +15,7 @@ import { Animations } from '../../utils';
 
 const Box = styled.div`
   box-sizing: border-box;
-  ${compose(space, layout, color, typography, flexbox, borderRadius, position)}
+  ${compose(space, layout, color, typography, flexbox, border, borderRadius, position)}
   ${({ animation }) => Animations[animation]}
 `;
 
