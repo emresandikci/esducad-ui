@@ -1,9 +1,9 @@
 import React from 'react';
 import { css } from 'styled-components';
-import { compose, variant, border } from 'styled-system';
+import { compose, variant } from 'styled-system';
 import PropTypes from 'prop-types';
 import Box from '../box';
-import { themeVariants, hexToRgba } from '../../utils';
+import { themeVariants, hexToRgba, rgbToHsl, get } from '../../utils';
 
 const { buttonTypes, buttonSizeTypes } = themeVariants;
 
@@ -20,12 +20,35 @@ const buttonSizes = variant({
   },
 });
 
-const getColor = (props, opacity) => {
-  const { color, theme } = props;
+const getRgba = (props, opacity) => {
+  const { color } = props;
   if (color) {
-    const currentColor = theme.colors[color] !== undefined ? theme.colors[color] : color;
-    return hexToRgba(`${currentColor}`, opacity);
+    const currentColor = get.color(color);
+    const converted = hexToRgba(`${currentColor}`, opacity).all;
+    return converted;
   }
+};
+const getHsl = (props, lightness) => {
+  const { color, bg, background, variant } = props;
+  let converted;
+  if (bg || background || variant || color) {
+    let hex = bg || background;
+
+    if (variant) {
+      hex =
+        variant === 'text' || variant === 'outline'
+          ? color
+          : themeVariants.buttonTypes[variant].bg;
+    }
+
+    const currentColor = get.color(hex);
+
+    if (currentColor !== undefined) {
+      converted = rgbToHsl(`${currentColor}`, lightness).all;
+    }
+    return converted;
+  }
+  return null;
 };
 
 const styles = css`
@@ -40,11 +63,16 @@ const styles = css`
   cursor: pointer;
 
   &:hover:not([disabled]):not(:active) {
-    opacity: 0.8;
     ${props =>
       (props.variant === 'text' || props.variant === 'outline') &&
       css`
-        background-color: ${getColor(props, 0.1)};
+        background-color: ${getRgba(props, 0.1)};
+      `}
+    ${props =>
+      props.variant !== 'text' &&
+      props.variant !== 'outline' &&
+      css`
+        background-color: ${getHsl(props, -10)};
       `}
     @media (hover: none) {
       opacity: 1;
@@ -54,32 +82,30 @@ const styles = css`
     ${props =>
       (props.variant === 'text' || props.variant === 'outline') &&
       css`
-        background-color: ${getColor(props, 0.2)};
+        background-color: ${getRgba(props, 0.2)};
+      `}
+    ${props =>
+      props.variant !== 'text' &&
+      props.variant !== 'outline' &&
+      css`
+        background-color: ${getHsl(props, -20)};
       `}
   }
   &:disabled {
     opacity: 0.1;
     cursor: not-allowed;
-    ${props =>
-      props.variant !== 'text' &&
-      props.variant !== 'outline' &&
-      css`
-        background-color: ${props.theme.colors['black']};
-        color: ${props.theme.colors['white']};
-      `}
   }
-  ${compose(buttonSizes, buttons, border)}
+  ${compose(buttonSizes, buttons)}
 `;
 
 const Button = React.forwardRef((props, ref) => (
-  <Box color="black" css={styles} ref={ref} {...props} />
+  <Box color="black" bg="lightGray" css={styles} ref={ref} {...props} />
 ));
 
 Button.displayName = 'Button';
 
 Button.defaultProps = {
   as: 'button',
-  variant: 'default',
   display: 'inline-flex',
   borderRadius: 2,
   fontSize: 'normal',
@@ -87,8 +113,6 @@ Button.defaultProps = {
   fontWeight: 'bolder',
   justifyContent: 'center',
   alignItems: 'center',
-  // py: 3,
-  // px: 4,
   bySize: 'medium',
   lineHeight: 'button',
 };
@@ -101,8 +125,9 @@ Button.propTypes = {
     'primary',
     'secondary',
     'danger',
-    'info',
     'success',
+    'warning',
+    'info',
     'outline',
     'text',
   ]),

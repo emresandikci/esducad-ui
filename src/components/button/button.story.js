@@ -20,11 +20,12 @@ export const DefaultButton = () => (
       To show send message,please click to default <b>send button</b>
     </Text>
     <Box pt={2}>
-      <Button onClick={() => alert('The message is sent!')}>send message</Button>
+      <Button variant="default" onClick={() => alert('The message is sent!')}>
+        send message
+      </Button>
     </Box>
   </Box>
 );
-
 export const PrimaryButton = () => <Button variant="primary">primary</Button>;
 export const SecondaryButton = () => <Button variant="secondary">secondary</Button>;
 export const OutlineButton = () => (
@@ -37,10 +38,13 @@ export const OutlineButton = () => (
       <Button variant="outline" color="secondary">
         outline
       </Button>
-      <Button variant="outline" color="success">
+      <Button variant="outline" color="danger">
         outline
       </Button>
-      <Button variant="outline" color="danger">
+      <Button variant="outline" color="warning">
+        outline
+      </Button>
+      <Button variant="outline" color="success">
         outline
       </Button>
       <Button variant="outline" color="info">
@@ -65,6 +69,9 @@ export const TextButton = () => (
       <Button variant="text" color="danger">
         text
       </Button>
+      <Button variant="text" color="warning">
+        text
+      </Button>
       <Button variant="text" color="info">
         text
       </Button>
@@ -81,12 +88,13 @@ export const Variants = () => (
     </Box>
     <Box display="flex" alignItems="center" justifyContent="center">
       <Space sr={2}>
-        <Button>default</Button>
+        <Button variant="default">default</Button>
         <Button variant="primary">primary</Button>
         <Button variant="secondary">secondary</Button>
         <Button variant="danger">danger</Button>
-        <Button variant="info">info</Button>
+        <Button variant="warning">warning</Button>
         <Button variant="success">success</Button>
+        <Button variant="info">info</Button>
         <Button variant="outline">outline</Button>
         <Button variant="text">text</Button>
       </Space>
