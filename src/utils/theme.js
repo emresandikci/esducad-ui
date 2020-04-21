@@ -1,10 +1,11 @@
 import themeVariants from './themeVariants';
 
-const breakpoints = ['40em', '52em', '64em', '80em'];
+//breakpoints xs 0 = 320 || sm 1 = 420 || md 2 = 768 || lg 3 = 1024 || xl 4 = 1280 || xxl 5 = 1440 || xxl 6 = 1920
+const breakpoints = ['0', '26.25em', '48em', '64em', '80em', '90em', '120em'];
 const fontSizes = [13, 14, 16, 18, 22, 30];
 const fontWeights = [300, 600, 800];
 const space = [0, 4, 8, 12, 16, 18, 24, 32, 64, 128, 256];
-const sizes = [0, 4, 8, 12, 16, 18, 24, 32, 64, 128, 256];
+const sizes = [];
 
 const radii = [0, 2, 4, 5, 8, 9999, '100%'];
 const shadows = [
@@ -32,29 +33,26 @@ const letterSpacings = {
 
 //default colors
 const colors = {
+  primary: '#5179ED',
+  secondary: '#F14D9A',
+  danger: '#F93345',
+  success: '#3FD49B',
+  warning: '#fec10c',
+  info: '#04ADBF',
   gray: '#bdbdbd',
   lightPink: '#fadbe0',
-  turquoise: '#32adc8',
   darkGray: '#828282',
   black: '#333333',
   white: '#ffffff',
-  redPink: '#e73956',
-  darkPink: '#D82A47',
   blue: '#0086bc',
-  rosyPink: '#ed6f84',
-  warmPink: '#f45270',
   lightGray: '#e0e0e0',
   darkBlue: '#006e9a',
   lightBlue: '#2e9cc8',
   skyBlue: '#d0e9f2',
   darkerGray: '#4f4f4f',
   darkWhite: '#f2f2f2',
-  darkYellow: '#d3b03d',
-  info: '#03a699',
   infoDark: '#068279',
-  success: '#008000',
   successDark: '#006500',
-  danger: '#e02020',
   dangerDark: '#C01A1A',
 };
 
@@ -66,6 +64,16 @@ const buttons = { ...buttonTypes };
 const buttonSizes = { ...buttonSizeTypes };
 
 //aliases
+
+//breakpoints
+// xs 0 = 320 || sm 1 = 420 || md 2 = 768 || lg 3 = 1024 || xl 4 = 1280 || xxl 5 = 1440 || xxl 6 = 1920
+breakpoints.xs = breakpoints[0];
+breakpoints.sm = breakpoints[1];
+breakpoints.md = breakpoints[2];
+breakpoints.lg = breakpoints[3];
+breakpoints.xl = breakpoints[4];
+breakpoints.xxl = breakpoints[5];
+breakpoints.xxxl = breakpoints[6];
 
 //radii
 radii.none = radii[0];
@@ -96,8 +104,6 @@ zIndices.loading = zIndices[3];
 shadows.card = shadows[0];
 shadows.nav = shadows[1];
 
-//spaces
-
 export default {
   breakpoints,
   fonts,
@@ -112,5 +118,5 @@ export default {
   buttonSizes,
   zIndices,
   shadows,
-  // sizes,
+  sizes,
 };
