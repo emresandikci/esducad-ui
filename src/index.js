@@ -15,7 +15,6 @@ import {
   Dropdown,
   Heading,
   Input,
-  Label,
   Modal,
   Navbar,
   Pagination,
@@ -29,9 +28,10 @@ import {
   Toast,
   Tooltip,
   Space,
+  Flex,
 } from './components';
 
-export default {
+export {
   Accordion,
   Alert,
   Avatar,
@@ -48,7 +48,6 @@ export default {
   Dropdown,
   Heading,
   Input,
-  Label,
   Modal,
   Navbar,
   Pagination,
@@ -62,4 +61,5 @@ export default {
   Toast,
   Tooltip,
   Space,
+  Flex,
 };
