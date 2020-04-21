@@ -4,15 +4,18 @@ import Card from '../card';
 import Button from '../button';
 import Overlay from '../overlay';
 import PropTypes from 'prop-types';
+import { defaultTheme, get } from '../../utils';
+import { IconClose } from '../../icons';
 
-const Content = props => {
-  const { width, onClose } = props;
+const Content = ({ width, onClose, exitIconColor, ...props }) => {
+  const { colors } = defaultTheme;
+  const iconColor = exitIconColor ? get.color(exitIconColor) : colors.danger;
   const handleOnClose = () => onClose(false);
   return (
     <Card width={width ? width : ['300px', 1 / 2]} m="auto" boxShadow="card" {...props}>
       <Box display="flex" justifyContent="flex-end" pr={3} pt={2}>
-        <Button variant="text" alignSelf="right" color="darkPink" onClick={handleOnClose}>
-          X
+        <Button variant="text" alignSelf="right" color={iconColor} onClick={handleOnClose}>
+          <IconClose fill={iconColor} />
         </Button>
       </Box>
       {props.children}

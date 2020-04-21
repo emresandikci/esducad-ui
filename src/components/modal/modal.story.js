@@ -31,7 +31,7 @@ export const Exampe = () => {
           </Text>
         </Modal.Body>
         <Modal.Footer display="flex" justifyContent="space-between">
-          <Button variant="secondary" width={1} mr={1}>
+          <Button variant="success" width={1} mr={1}>
             Save
           </Button>
           <Button variant="danger" width={1} onClick={() => setActive(false)}>
@@ -44,7 +44,9 @@ export const Exampe = () => {
   return (
     <Box height="600px">
       <Box display="flex" justifyContent="center" py={2} mt={2}>
-        <Button onClick={() => setActive(!isActive)}>Open Modal</Button>
+        <Button variant="default" onClick={() => setActive(!isActive)}>
+          Open Modal
+        </Button>
       </Box>
       {renderModal()}
     </Box>
