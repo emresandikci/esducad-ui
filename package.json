@@ -7,10 +7,10 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "start": "start-storybook --docs -p 1992",
     "build": "yarn clean && yarn install && yarn transpile",
     "build:doc": "build-storybook --docs -c .storybook -o .out",
     "build:icon": "yarn svgr ./src/static/icons -d ./src/icons --svgo-config .svgorc.json",
-    "start:doc": "start-storybook --docs -p 1992",
     "transpile": "babel src/ -d dist/ --ignore src/**/*.story.js,src/static/icons/*",
     "clean": "rimraf ./dist",
     "check": "yarn lint:fix && yarn lint && yarn lint:css",

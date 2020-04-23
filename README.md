@@ -20,4 +20,4 @@ I'm using [storybook](https://storybook.js.org/) to documented the **ESDUCAD U
 
 To get this repo to your local development enviroment, run the below script in your terminal and Ta daa, its running !!!
 
-    git clone https://github.com/emresandikci/esducad-ui && cd esducad-ui && yarn install && yarn start:doc
+    git clone https://github.com/emresandikci/esducad-ui && cd esducad-ui && yarn install && yarn start
