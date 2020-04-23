@@ -29,6 +29,7 @@ import {
   Tooltip,
   Space,
   Flex,
+  Text,
 } from './components';
 
 export {
@@ -62,4 +63,5 @@ export {
   Tooltip,
   Space,
   Flex,
+  Text,
 };

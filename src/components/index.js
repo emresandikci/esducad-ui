@@ -28,6 +28,7 @@ import Toast from './toast';
 import Tooltip from './tooltip';
 import Space from './space';
 import Flex from './flex';
+import Text from './text';
 
 export {
   Accordion,
@@ -60,4 +61,5 @@ export {
   Tooltip,
   Space,
   Flex,
+  Text,
 };
