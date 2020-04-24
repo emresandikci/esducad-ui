@@ -6,7 +6,7 @@ const Flex = ({ children, gutter, gutterX, gutterY, ...props }) => {
     if (children && children.length === 0) {
       return null;
     }
-    return React.Children.map(children, child => {
+    return React.Children.map(children, (child) => {
       const { width } = child.props;
       return (
         <Box

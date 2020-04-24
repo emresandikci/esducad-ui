@@ -63,12 +63,12 @@ const styles = css`
   cursor: pointer;
 
   &:hover:not([disabled]):not(:active) {
-    ${props =>
+    ${(props) =>
       (props.variant === 'text' || props.variant === 'outline') &&
       css`
         background-color: ${getRgba(props, 0.1)};
       `}
-    ${props =>
+    ${(props) =>
       props.variant !== 'text' &&
       props.variant !== 'outline' &&
       css`
@@ -79,12 +79,12 @@ const styles = css`
     }
   }
   &:active {
-    ${props =>
+    ${(props) =>
       (props.variant === 'text' || props.variant === 'outline') &&
       css`
         background-color: ${getRgba(props, 0.2)};
       `}
-    ${props =>
+    ${(props) =>
       props.variant !== 'text' &&
       props.variant !== 'outline' &&
       css`

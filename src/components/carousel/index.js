@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { IconArrow } from '../../icons';
 import { hooks, get } from '../../utils';
 
-const Item = props => <Box {...props} />;
+const Item = (props) => <Box {...props} />;
 
 const BaseComponent = React.forwardRef(
   (
@@ -140,6 +140,9 @@ BaseComponent.propTypes = {
   delay: PropTypes.number,
   arrowColor: PropTypes.string,
   navigationColor: PropTypes.string,
+  onChange: PropTypes.func,
+  leftIcon: PropTypes.element,
+  rightIcon: PropTypes.element,
 };
 BaseComponent.defaultProps = {
   delay: 0,

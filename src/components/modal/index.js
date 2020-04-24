@@ -33,11 +33,11 @@ const Content = ({ width, onClose, exitIconColor, exitIconTop, exitIconRight, ..
   );
 };
 
-const Header = props => <Box padding={3} {...props} />;
+const Header = (props) => <Box padding={3} {...props} />;
 
-const Body = props => <Box padding={3} {...props} />;
+const Body = (props) => <Box padding={3} {...props} />;
 
-const Footer = props => <Box padding={3} {...props} />;
+const Footer = (props) => <Box padding={3} {...props} />;
 
 const BaseComponent = React.forwardRef((props, ref) => {
   const defaultPaddingTop = 7;
