@@ -13,20 +13,22 @@
     "build:icon": "yarn svgr ./src/static/icons -d ./src/icons --svgo-config .svgorc.json",
     "transpile": "babel src/ -d dist/ --ignore src/**/*.story.js,src/static/icons/*",
     "clean": "rimraf ./dist",
-    "check": "yarn lint:fix && yarn lint && yarn lint:css",
-    "lint": "eslint ./src/*",
-    "lint:watch": "esw ./src/* -w --color",
-    "lint:css": "stylelint './src/*'",
-    "lint:fix": "eslint --fix ./src/*"
+    "format": "prettier --write \"src/**/*.{js,jsx,css,json}\"",
+    "lint": "eslint src",
+    "lint:fix": "yarn lint --fix",
+    "validate": "yarn prettier --check \"src/**/*.{js,jsx,css,json}\" && yarn lint"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
-    "*.js,dist/*.js": [
-      "prettier --write"
+    "src/**/!(*story).js": [
+      "yarn format",
+      "yarn lint:fix",
+      "yarn validate"
     ]
   },
   "dependencies": {
@@ -41,34 +43,29 @@
     "@babel/plugin-transform-runtime": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-docs": "^5.3.17",
     "@storybook/addon-links": "^5.3.17",
     "@storybook/addons": "^5.3.17",
     "@storybook/react": "^5.3.17",
     "@svgr/cli": "^5.3.1",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-preset-minify": "^0.5.1",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
-    "eslint-watch": "^6.0.1",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1",
-    "prettier-eslint": "^9.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.7",
+    "prettier": "2.0.5",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "rimraf": "^3.0.2",
-    "styled-components": "^5.0.1",
-    "stylelint": "^13.2.1",
-    "stylelint-config-recommended": "^3.0.0",
-    "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0"
+    "styled-components": "^5.0.1"
   },
   "keywords": [
     "ui",
