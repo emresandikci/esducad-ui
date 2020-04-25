@@ -10,7 +10,7 @@ A web development ui kit library for **[React.Js](https://reactjs.org)** by *
 
 ## Please read this section before start to development.
 
-> First of all you have to install these plugins to your editor (**vscode**), but if you are using it another code editor or IDE install them for your them.
+> First of all you have to install these plugins to your editor (**vscode**), but if you are using an another code editor or IDE install them for your dev environment
 
 - [Styled Component Syntax highlighting for VS Code](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
 
