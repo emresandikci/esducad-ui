@@ -36,7 +36,7 @@ const buttonTypes = {
     color: 'white',
   },
   outline: {
-    bg: 'white',
+    bg: 'transparent',
     boxShadow: 'inset 0 0 2px',
   },
   text: {
