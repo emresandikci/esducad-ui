@@ -8,7 +8,7 @@
   "private": false,
   "scripts": {
     "start": "start-storybook --docs -p 1992",
-    "build": "yarn clean && build:icon && yarn format && yarn transpile",
+    "build": "yarn clean && yarn build:icon && yarn format && yarn transpile",
     "build:doc": "build-storybook --docs -c .storybook -o .out",
     "build:icon": "yarn svgr ./src/static/icons -d ./src/icons --svgo-config .svgorc.json",
     "transpile": "babel src/ -d dist/ --ignore src/**/*.story.js,src/static/icons/*",
