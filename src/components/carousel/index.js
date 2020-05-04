@@ -95,9 +95,7 @@ const BaseComponent = React.forwardRef(
       >
         <Box display="flex" alignItems="center">
           <Box p={0} onClick={() => Prev()}>
-            {leftIcon ? (
-              leftIcon
-            ) : (
+            {leftIcon || (
               <IconArrow
                 height={48}
                 width={48}
@@ -120,11 +118,7 @@ const BaseComponent = React.forwardRef(
               cursor: pointer;
             `}
           >
-            {rightIcon ? (
-              rightIcon
-            ) : (
-              <IconArrow height={48} width={48} fill={get.color(arrowColor)} />
-            )}
+            {rightIcon || <IconArrow height={48} width={48} fill={get.color(arrowColor)} />}
           </Box>
         </Box>
       </Box>

@@ -1,4 +1,5 @@
 export { default as IconArrow } from './IconArrow';
+export { default as IconAvatar } from './IconAvatar';
 export { default as IconCheckCircle } from './IconCheckCircle';
 export { default as IconClose } from './IconClose';
 export { default as IconError } from './IconError';

@@ -4,12 +4,7 @@ import { Box, Card } from '../../components';
 const Logo = ({ src, alt, width, height, ...props }) => {
   return (
     <Box flex={1} {...props}>
-      <img
-        src={src}
-        alt={alt ? alt : 'logo'}
-        width={width ? width : '50px'}
-        height={height ? height : '50px'}
-      />
+      <img src={src} alt={alt || 'logo'} width={width || '50px'} height={height || '50px'} />
     </Box>
   );
 };

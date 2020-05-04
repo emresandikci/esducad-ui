@@ -8,8 +8,11 @@ const Avatar = ({ src, size, animation, ...props }) => (
   <Box
     as="img"
     src={src}
+    css={`
+      object-fit: cover;
+    `}
     borderRadius="50%"
-    size={size ? size : 50}
+    size={size || 50}
     animation={animation}
     {...props}
   />

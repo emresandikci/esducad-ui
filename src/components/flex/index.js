@@ -9,12 +9,7 @@ const Flex = ({ children, gutter, gutterX, gutterY, ...props }) => {
     return React.Children.map(children, (child) => {
       const { width } = child.props;
       return (
-        <Box
-          width={width ? width : '100%'}
-          p={gutter ? gutter : '.5em'}
-          px={gutterX}
-          py={gutterY}
-        >
+        <Box width={width || '100%'} p={gutter || '.5em'} px={gutterX} py={gutterY}>
           {React.cloneElement(child, { m: '0 auto', width: '100%' })}
         </Box>
       );

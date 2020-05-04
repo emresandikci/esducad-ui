@@ -11,15 +11,15 @@ const Content = ({ width, onClose, exitIconColor, exitIconTop, exitIconRight, ..
   return (
     <Card
       position="relative"
-      width={width ? width : ['300px', 1 / 2]}
+      width={width || ['300px', 1 / 2]}
       m="auto"
       boxShadow="card"
       {...props}
     >
       <Box
         position="absolute"
-        top={exitIconTop ? exitIconTop : '1rem'}
-        right={exitIconRight ? exitIconRight : '1rem'}
+        top={exitIconTop || '1rem'}
+        right={exitIconRight || '1rem'}
         css={`
           cursor: pointer;
         `}
@@ -48,7 +48,7 @@ const BaseComponent = React.forwardRef((props, ref) => {
   return (
     <Overlay
       ref={ref}
-      pt={pt ? pt : defaultPaddingTop}
+      pt={pt || defaultPaddingTop}
       display={isActive ? 'block' : 'none'}
       {...props}
     />
