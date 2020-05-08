@@ -27,7 +27,7 @@ Text.defaultProps = {
 };
 
 Text.propTypes = {
-  as: PropTypes.oneOf(['p', 'label', 'a']),
+  as: PropTypes.oneOf(['p', 'label', 'link', 'span']),
 };
 
 Text.displayName = 'Text';
