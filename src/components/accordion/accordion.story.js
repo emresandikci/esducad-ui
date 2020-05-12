@@ -10,7 +10,7 @@ export default {
 };
 export const General = () => (
   <Box>
-    <Text>Accordion is a helping to hide or show content.</Text>
+    <Text>Accordion is helping to hide or show content.</Text>
     <Box pt={5}>
       <Heading as="h3">Example</Heading>
     </Box>
