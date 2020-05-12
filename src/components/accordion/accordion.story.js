@@ -19,41 +19,41 @@ export const General = () => (
         <Accordion
           isOpen={true}
           width="600px"
-          title="Excepteur sint occaecat cupidatat non "
-          description=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          title="Lorem ipsum, or lipsum as"
+          description=" Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book."
         />
         <Accordion
           width="600px"
-          title="Excepteur sint occaecat cupidatat non "
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          title="Lorem ipsum, or lipsum as"
+          description=" Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book."
         />
         <Accordion
           width="600px"
-          title="Excepteur sint occaecat cupidatat non "
-          description=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          title="Lorem ipsum, or lipsum as"
+          description=" Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book."
         />
       </Space>
     </Box>
   </Box>
 );
 
-export const TitleDescriptionAsaComponent = () => (
-  <Box>
+export const CustomAccordion = () => (
+  <Box display="flex" flexDirection="column" alignItems="center" py="20px">
     <Accordion
       width="600px"
+      iconColor="secondary"
+      borderColor="secondary"
       title={
-        <Heading as="h2" color="secondary">
-          Excepteur sint occaecat cupidatat non
+        <Heading as="h3" color="secondary">
+          Lorem ipsum, or lipsum as
         </Heading>
       }
       description={
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
+        <Text color="primary">
+          Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print,
+          graphic or web designs. The passage is attributed to an unknown typesetter in the 15th
+          century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum
+          for use in a type specimen book.
         </Text>
       }
     />

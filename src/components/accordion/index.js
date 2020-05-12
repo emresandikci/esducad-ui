@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
-import { defaultTheme, themeVariants, get } from 'utils';
+import { themeVariants, get } from 'utils';
 import Box from '../box';
 import Heading from '../heading';
 import Text from '../text';
-
 import { IconArrow } from 'icons';
+import PropTypes from 'prop-types';
 
 const { defaultPropTypes } = themeVariants;
-const { colors } = defaultTheme;
 
-const Accordion = ({ iconColor, title, description, isOpen, borderColor, ...props }) => {
+const Accordion = ({
+  iconColor,
+  title,
+  description,
+  isOpen,
+  borderColor,
+  iconSize,
+  ...props
+}) => {
   const [isShow, setIsShow] = useState(isOpen);
   return (
     <Box
@@ -19,8 +26,8 @@ const Accordion = ({ iconColor, title, description, isOpen, borderColor, ...prop
       css={`
         cursor: pointer;
       `}
-      {...props}
       onClick={() => setIsShow(!isShow)}
+      {...props}
     >
       <Box display="flex" justifyContent="space-between" pb="8px">
         {typeof title === 'string' ? (
@@ -31,11 +38,11 @@ const Accordion = ({ iconColor, title, description, isOpen, borderColor, ...prop
           title
         )}
         <IconArrow
-          fill={iconColor || colors.primary}
+          fill={get.color(iconColor)}
           css={`
             transform: rotate(${isShow ? -90 : 90}deg);
-            height: 24px;
-            width: 24px;
+            height: ${iconSize};
+            width: ${iconSize};
           `}
         />
       </Box>
@@ -48,7 +55,22 @@ const Accordion = ({ iconColor, title, description, isOpen, borderColor, ...prop
 
 Accordion.displayName = 'Accordion';
 
+Accordion.defaultProps = {
+  iconColor: 'primary',
+  title: null,
+  description: null,
+  isOpen: false,
+  borderColor: 'gray',
+  iconSize: '34px',
+};
+
 Accordion.propTypes = {
+  iconColor: PropTypes.string,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  isOpen: PropTypes.bool,
+  borderColor: PropTypes.string,
+  iconSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   ...defaultPropTypes,
 };
 
