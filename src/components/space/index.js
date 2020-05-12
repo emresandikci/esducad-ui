@@ -8,7 +8,7 @@ const Space = ({ sr, sl, st, sb, sy, sx, space, children }) => {
       return null;
     }
     return React.Children.map(children, (child) => (
-      <Box pr={sr} pl={sl} pt={st} pb={sb} py={sy} px={sx} p={space}>
+      <Box p={space} py={sy} px={sx} pr={sr} pl={sl} pt={st} pb={sb}>
         {React.cloneElement(child, {})}
       </Box>
     ));
