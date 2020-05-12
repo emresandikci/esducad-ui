@@ -7,6 +7,17 @@
         "loose": true
       }
     ],
-    "babel-plugin-styled-components"
+    "babel-plugin-styled-components",
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "component/*": "./src/components/*",
+          "utils/*": "./src/utils/*",
+          "icons/*": "./src/icons/*"
+        }
+      }
+    ]
   ]
 }
