@@ -1,23 +1,10 @@
 import React from 'react';
-import { css } from 'styled-components';
 import PropTypes from 'prop-types';
-import { variant, compose } from 'styled-system';
 import Box from '../box';
-import { themeVariants } from '../../utils';
 
-const { textTypes } = themeVariants;
-const textType = variant({
-  scale: 'textTypes',
-  variants: textTypes,
-});
+const Text = (props) => <Box {...props} />;
 
-const styles = css`
-  ${compose(textType)}
-`;
-
-const Text = React.forwardRef((props, ref) => (
-  <Box m={0} p={0} css={styles} ref={ref} {...props} />
-));
+Text.displayName = 'Text';
 
 Text.defaultProps = {
   as: 'p',
@@ -27,9 +14,7 @@ Text.defaultProps = {
 };
 
 Text.propTypes = {
-  as: PropTypes.oneOf(['p', 'label', 'link', 'span']),
+  as: PropTypes.oneOf(['p', 'label', 'span', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
 };
-
-Text.displayName = 'Text';
 
 export default Text;

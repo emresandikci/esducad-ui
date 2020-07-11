@@ -61,8 +61,8 @@ export const TextWithColor = () => (
     <Text color="secondary" fontWeight="bold">
       Secondary - Contrary to popular belief, Lorem Ipsum is not simply random text.
     </Text>
-    <Text color="gold" fontWeight="bold">
-      Gol - Contrary to popular belief, Lorem Ipsum is not simply random text.
+    <Text color="warning" fontWeight="bold">
+      Warning - Contrary to popular belief, Lorem Ipsum is not simply random text.
     </Text>
   </Box>
 );
